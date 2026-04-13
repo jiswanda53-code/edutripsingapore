@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(rgba(13, 1, 1, 0.832), rgba(0,0,0,0.6)),
+                  url('singapore.jpg'); /* same background as home */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+    }
+
+    /* NAVBAR (same as homepage) */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+    }
+
+    nav h1 {
+      font-size: 24px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    /* CENTER CONTENT */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+
+    .form-box {
+      background: rgba(212, 195, 11, 0.849);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      width: 400px;
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #ff7b00;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff9d3f;
+    }
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #ffcc00;
+}
+  </style>
+</head>
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach((el) => {
+    const top = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (top < windowHeight - 50) {
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <h1>EduTrip</h1>
+    <div>
+      <a href="homeindex.html">Home</a>
+      <a href="editorspicks.html">gallery</a>
+      <a href="dailyschedule.html">activities</a>
+      <a href="freetimes.html">freetimes</a>
+      <a href="aboutus.html">about us</a>
+    </div>
+  </nav>
+
+  <!-- FORM -->
+  <div class="container">
+    <div class="form-box">
+      <h2>Give Us Feedback</h2>
+
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Feedback" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+
+    </div>
+  </div>
+
+</body>
+</html>

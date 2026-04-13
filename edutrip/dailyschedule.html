@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Daily Schedule Page</title>
+ <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <style>
+     * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #f5d000;
+    }
+
+    .nav a {
+      display: block;
+      text-align: center;
+      padding: 22px 12px;
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(20px, 3vw, 36px);
+      color: #0d4a4a;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border-right: 2px solid rgba(13,74,74,0.2);
+    }
+
+    .nav a:last-child { border-right: none; }
+    .nav a:hover { background: #0d4a4a; color: #f5d000; }
+
+
+    /* HERO SECTION */
+    .hero {
+        position: relative;
+        background: url('https://images.trvl-media.com/place/6047873/15d3ae30-ef33-406e-971f-9520c03f1089.jpg') no-repeat center;
+        background-size: cover;
+        padding: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.2);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .left {
+        width: 45%;
+        color: #f2d22e;
+    }
+
+    .left h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 2px black;
+    }
+
+    .pic-box {
+        width: 250px;
+        height: 150px;
+        background: #d8d98b;
+        overflow: hidden;
+    }
+
+    /* TABLE */
+    .table-container {
+        width: 50%;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: black;
+        color: white;
+    }
+
+    td, th {
+        border: 2px solid white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* BOTTOM SECTION */
+    .bottom {
+        display: flex;
+        padding: 50px;
+        background: #eee;
+    }
+
+    .bottom-left {
+        width: 50%;
+    }
+
+    .bottom-left h2 {
+        font-size: 60px;
+        margin: 0 0 20px 0;
+    }
+
+    .bottom-left p {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .bottom-right {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .big-pic {
+        width: 300px;
+        height: 200px;
+        background: #d8d98b;
+        overflow: hidden;
+    }
+
+    /* IMAGE SETTINGS */
+    .pic-box img,
+    .big-pic img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* FOOTER */
+    .footer {
+        text-align: center;
+        padding: 15px;
+        background: #222;
+        color: white;
+        font-size: 14px;
+    }
+    body {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #ffcc00;
+}
+</style>
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach((el) => {
+    const top = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (top < windowHeight - 50) {
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+</head>
+
+<body>
+
+<!-- UPDATED NAVBAR -->
+      <nav class="nav">
+    <a href="homeindex.html">Home</a>
+    <a href="dailyschedule.html">Activities</a>
+    <a href="freetimes.html">Freetimes</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="editorspicks.html">editors gallery</a>
+    <a href="ratings.html">our ratings</a>
+  </nav>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <div class="hero-content">
+
+        <div class="left">
+            <h1>DAILY SCHEDULE</h1>
+
+            <div class="pic-box">
+                <img src="img10.jpeg" alt="Schedule Image">
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Day 1</th>
+                    <th>Bugis</th>
+                </tr>
+                <tr>
+                    <td>Day 2</td>
+                    <td>Marina Bay Sands</td>
+                </tr>
+                <tr>
+                    <td>Day 3</td>
+                    <td>Ion Orchard</td>
+                </tr>
+                <tr>
+                    <td>Day 4</td>
+                    <td>Sentosa Island</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<!-- BOTTOM SECTION -->
+<div class="bottom">
+    <div class="bottom-left">
+        <h2>school visit</h2>
+        <p>
+            We went to Saint Joseph Institution (SJI) our sister school, located in Stevens Station, Malcolm Road
+        </p>
+    </div>
+
+    <div class="bottom-right">
+        <div class="big-pic">
+            <img src="img11.jpeg" alt="School Visit">
+        </div>
+    </div>
+</div>
+</body>
+</html>

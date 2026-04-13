@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+   .nav {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #f5d000;
+    }
+
+    .nav a {
+      display: block;
+      text-align: center;
+      padding: 22px 12px;
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(20px, 3vw, 36px);
+      color: #0d4a4a;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border-right: 2px solid rgba(13,74,74,0.2);
+    }
+
+    .nav a:last-child { border-right: none; }
+    .nav a:hover { background: #0d4a4a; color: #f5d000; }
+    body {
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .about {
+      background: #0d4a4a;
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(40px, 7vw, 80px);
+      color: #f5d000;
+      letter-spacing: 0.08em;
+    }
+
+    .about p {
+      max-width: 600px;
+      margin: 16px auto 0;
+      font-size: 20px;
+      line-height: 1.75;
+      color: #f5d000;
+    }
+
+    .members {
+      background: #f5d000;
+      padding: 64px 24px;
+      text-align: center;
+    }
+
+    .members h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(40px, 7vw, 80px);
+      color: #0d4a4a;
+      letter-spacing: 0.08em;
+      margin-bottom: 32px;
+    }
+
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .member-card {
+      background: #0d4a4a;
+      padding: 16px;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .member-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .member-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .member-card h3 {
+      font-family: 'Bebas Neue', cursive;
+      color: #f5d000;
+      font-size: 24px;
+      letter-spacing: 0.05em;
+    }
+
+    footer {
+      background: #0d4a4a;
+      text-align: center;
+      padding: 20px 16px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(245,208,0,0.6);
+    }
+    body {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #ffcc00;
+}
+  </style>
+</head>
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach((el) => {
+    const top = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (top < windowHeight - 50) {
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+<body>
+      <nav class="nav">
+    <a href="homeindex.html">Home</a>
+    <a href="dailyschedule.html">Activities</a>
+    <a href="freetimes.html">Freetimes</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="editorspicks.html">editors gallery</a>
+    <a href="ratings.html">our ratings</a>
+  </nav>
+  <section class="about" id="about">
+    <h2>ABOUT US</h2>
+    <p>
+      We are the students of <strong>Santa Laurensia School</strong>, Tangerang — 
+      embarking on an unforgettable educational journey to the Lion City. 
+      This trip is more than sightseeing; it's a chance to grow, connect, 
+      and learn beyond the classroom.
+    </p>
+  </section>
+
+  <!-- MEMBERS SECTION -->
+  <section class="members">
+    <h2>OUR MEMBERS</h2>
+
+    <div class="member-grid">
+      <div class="member-card">
+        <img src="WhatsApp Image 2026-04-13 at 9.29.29 PM.jpeg" alt="">
+        <h3>Juan Mackinnley Iswanda</h3>
+      </div>
+
+      <div class="member-card">
+        <img src="WhatsApp Image 2026-04-13 at 9.31.47 PM.jpeg" alt="">
+        <h3>william Arthur Wibisono</h3>
+      </div>
+
+      <div class="member-card">
+        <img src="WhatsApp Image 2026-04-13 at 9.32.18 PM.jpeg" alt="">
+        <h3>Richellino Eagan Kuswanto
+</h3>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    A Santa Laurensia Production
+  </footer>
+
+</body>
+</html>

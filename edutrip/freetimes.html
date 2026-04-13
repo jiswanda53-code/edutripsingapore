@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freetimes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: #1e2324;
+      color: #fff;
+    }
+        .hero-btn:hover { background: #ffe033; }
+
+    .nav {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #f5d000;
+    }
+
+    .nav a {
+      display: block;
+      text-align: center;
+      padding: 22px 12px;
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(20px, 3vw, 36px);
+      color: #0d4a4a;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      border-right: 2px solid rgba(13,74,74,0.2);
+    }
+
+    .nav a:last-child { border-right: none; }
+    .nav a:hover { background: #0d4a4a; color: #f5d000; }
+    .freetimes { 
+      background: #1e2324; 
+      padding: 56px 24px; 
+    }
+
+    .freetimes h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(32px, 5vw, 60px);
+      color: #fff;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .freetimes .sub {
+      text-align: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .ft-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 12px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ft-card {
+      background: #e8e86a;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .ft-card .icon { 
+      font-size: 28px; 
+    }
+
+    .ft-card h4 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 22px;
+      color: #0d4a4a;
+      letter-spacing: 0.05em;
+      margin-top: 8px;
+    }
+
+    .ft-card p { 
+      font-size: 13px; 
+      color: #0d4a4a; 
+      margin-top: 4px; 
+      opacity: 0.75; 
+    }
+    body {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: #ffcc00;
+}
+  </style>
+</head>
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach((el) => {
+    const top = el.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (top < windowHeight - 50) {
+      el.classList.add("active");
+    }
+  });
+});
+
+</script>
+<body>
+    <nav class="nav">
+    <a href="homeindex.html">home</a>
+    <a href="dailyschedule.html">Activities</a>
+    <a href="freetimes.html">Freetimes</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="editorspicks.html">editors gallery</a>
+    <a href="ratings.html">our ratings</a>
+  </nav>
+  <section class="freetimes" id="freetimes">
+    <h2>FREETIMES</h2>
+    <p class="sub">Our favourite moments or places in our freetimes</p>
+    <div class="ft-grid">
+      <div class="ft-card">
+        <div class="icon">🌆</div>
+        <h4>Marina Bay Sands</h4>
+        <p>Exploring the modern and innovative architecture of Singapore's edge</p>
+      </div>
+      <div class="ft-card">
+        <div class="icon">🛍️</div>
+        <h4>Orchard Road</h4>
+        <p>experience of high end premium malls at the street of Orchard</p>
+      </div>
+      <div class="ft-card">
+        <div class="icon">👳</div>
+        <h4>Mustafa centre</h4>
+        <p>Shopping in the cheapest options in Little India</p>
+      </div>
+      <div class="ft-card">
+        <div class="icon">🏝️</div>
+        <h4>Sentosa Island</h4>
+        <p>Enjoying the beaches and theme parks of this resort island</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
